@@ -18,7 +18,7 @@ public class MainController {
         this.mainFrame = new MainFrame();
         this.mainModel = new MainModel();
 
-        timer = new Timer(400, action -> onTime());
+        timer = new Timer(300, action -> onTime());
 
         setEvents();
     }
@@ -26,8 +26,13 @@ public class MainController {
     private void onTime() {
 
         this.mainFrame.trackPanel.car1.go();
+        this.mainFrame.trackPanel.car1.setSpeed();
+    
         this.mainFrame.trackPanel.car2.go();
+        this.mainFrame.trackPanel.car2.setSpeed();
+
         this.mainFrame.trackPanel.car3.go();
+        this.mainFrame.trackPanel.car3.setSpeed();
     }
 
     private void handleStartButtonAction() {
