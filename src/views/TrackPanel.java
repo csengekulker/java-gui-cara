@@ -29,4 +29,10 @@ public class TrackPanel extends JPanel {
         this.setBorder(border);
         this.setLayout(null);
     }
+
+    public void resetPosition() {
+        car1.setLocation(5, 5);
+        car2.setLocation(5, 50);
+        car3.setLocation(5, 95);
+    }
 }
