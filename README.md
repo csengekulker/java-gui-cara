@@ -1,3 +1,3 @@
-# Template program
+# Cara Race Simulator
 
-Template leírás
+

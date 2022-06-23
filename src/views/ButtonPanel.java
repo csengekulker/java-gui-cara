@@ -11,7 +11,7 @@ public class ButtonPanel extends JPanel{
     public JButton resetButton;
     public JButton speedButton;
     public JButton aboutButton;
-    JButton exitButton;
+    public JButton exitButton;
 
     public ButtonPanel() {
         startButton = new JButton("Start");
