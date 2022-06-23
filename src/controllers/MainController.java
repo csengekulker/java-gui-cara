@@ -6,6 +6,7 @@ import models.MainModel;
 import views.ButtonPanel;
 import views.MainFrame;
 import views.TrackPanel;
+import views.Car;
 
 public class MainController {
     MainFrame mainFrame;
@@ -27,14 +28,28 @@ public class MainController {
 
     private void onTime() {
 
-        this.mainFrame.trackPanel.car1.go();
-        this.mainFrame.trackPanel.car1.setSpeed();
-    
-        this.mainFrame.trackPanel.car2.go();
-        this.mainFrame.trackPanel.car2.setSpeed();
+        trackPanel = this.mainFrame.trackPanel;
 
-        this.mainFrame.trackPanel.car3.go();
-        this.mainFrame.trackPanel.car3.setSpeed();
+        int car1_x = trackPanel.car1.go();
+        trackPanel.car1.setSpeed();
+        isFinished(car1_x, trackPanel.car1);
+    
+        int car2_x = trackPanel.car2.go();
+        trackPanel.car2.setSpeed();
+        isFinished(car2_x, trackPanel.car2);
+
+        int car3_x = trackPanel.car3.go();
+        trackPanel.car3.setSpeed();
+        isFinished(car3_x, trackPanel.car3);
+
+    }
+
+    private void isFinished(int x, Car car) {
+        if (x >= 700) {
+            System.out.println(car.getCarName());
+            timer.stop();
+        }
+
     }
 
     private void handleStartButtonAction() {

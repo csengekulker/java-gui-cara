@@ -10,6 +10,7 @@ public class Car extends JButton{
     Integer actSpeed;
     int maxSpeed;
     boolean speedVisible;
+    String name;
 
     public Car(Color color, int initSpeed, String name) {
 
@@ -18,17 +19,24 @@ public class Car extends JButton{
         this.actSpeed = initSpeed;
         this.maxSpeed = 20;
         this.speedVisible = true;
+        this.name = name;
     }
 
     public Integer getActSpeed() {
         return this.actSpeed;
     }
 
-    public void go() {
+    public String getCarName() {
+        return this.name;
+    }
+
+    public int go() {
         int x = this.getLocation().x;
         int y = this.getLocation().y;
         x = x + this.actSpeed;
         this.setLocation(x, y);
+
+        return x;
     }
 
     public void setSpeed() {

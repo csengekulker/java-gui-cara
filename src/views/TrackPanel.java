@@ -1,6 +1,7 @@
 package views;
 
 import java.awt.Color;
+import java.awt.Graphics;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
@@ -12,6 +13,7 @@ public class TrackPanel extends JPanel {
     public Car car3;
 
     public TrackPanel() {
+
         this.car1 = new Car(new Color(135, 83, 175), 5, "(●'◡'●)");
         this.car1.setBounds(5, 5, 100, 30);
 
@@ -29,6 +31,12 @@ public class TrackPanel extends JPanel {
         this.setBorder(border);
         this.setLayout(null);
     }
+
+
+    // public void paint(Graphics g) {
+    //     g.setColor(Color.RED);
+    //     g.fillRect(300, 20, 10, 40);
+    // }
 
     public void resetPosition() {
         car1.setLocation(5, 5);
